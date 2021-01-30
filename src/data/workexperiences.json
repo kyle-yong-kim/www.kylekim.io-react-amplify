@@ -1,0 +1,99 @@
+{
+    "work": [
+        {
+            "companyName": "amazon",
+            "date": "2020 June ~ Current",
+            "title": "Software Engineer",
+            "team": "Amazon Web Services, Relational Database Services Team.",
+            "type": "work",
+            "mainrole": null,
+            "techstack": null,
+            "imgsrc": "../img/portfolio/amalogo.png",
+            "hasDetails": false
+        },
+        {
+            "companyName": "td",
+            "date": "2019 Sept ~ 2020 May (9 months)",
+            "title": "Software Engineer (Capstone)",
+            "team": "Research Division.",
+            "type": "work",
+            "mainrole": "Delivered and automated textual branch review processes through NLP. Developed POC AWS solutions.",
+            "techstack": "Jupyter Notebook, Python, ML, NLP, AWS.",
+            "imgsrc": "../img/portfolio/TD_logo2.png",
+            "hasDetails": false
+        },
+        {
+            "companyName": "cppib",
+            "date": "2019 May ~ 2019 Aug (4 months)",
+            "title": "Software Engineer Intern",
+            "team": "Knowledge Search Portal Team.",
+            "type": "work",
+            "mainrole": "Developed a serverless cloud data pipeline for investment holdings information through AWS.",
+            "techstack": "Java, Spring Boot, AWS, Jenkins, Fargate.",
+            "imgsrc": "../img/portfolio/CPPIB2.png",
+            "hasDetails": false
+        },
+        {
+            "companyName": "autoliv",
+            "date": "2018 May - 2019 April (12 months)",
+            "title": "Mechatronics Engineer Intern",
+            "team": "Process Engineering, ECU Team.",
+            "type": "work",
+            "mainrole": "Created / Published ASP.NET MVC based web-service API to automate assembly line status updating procedure.",
+            "techstack": "C#, Python, ASP.NET, SQL.",
+            "imgsrc": "../img/portfolio/autoliv5.png",
+            "hasDetails": true
+        },
+        {
+            "companyName": "resume",
+            "date": "2019 Version",
+            "title": "Resume, Software Engineer",
+            "team": null,
+            "type": "Resume.pdf",
+            "mainrole": null,
+            "techstack": null,
+            "imgsrc": "../img/portfolio/resume3.png",
+            "hasDetails": true
+        }
+    ],
+    "project": [
+        {
+            "companyName": "MLProject",
+            "subtitle": "Coursework for Artificial Intelligence Fundamentals",
+            "title": "Machine Learning, News Headline to Stock Prediction",
+            "desc" : 
+            [
+                "Utilized LSTM Machine Learning architecture to predict stock movement based on given news article.",
+                "Achieved 76% test accuracy rate in conjunction with fundamental NLP, data augmentation, Word2Vec embedding, and hyperparameter optimization."
+            ],
+            "hasDetails": null,
+            "imgsrc": "../img/portfolio/LSTM.png"
+        },
+        {
+            "companyName": "StockProject",
+            "subtitle": "Personal Project",
+            "title": "Stock Trend Forecast Bot",
+            "desc" : 
+            [
+                "Utilized Python, MATLAB and IEX financial data API to predictively model stock trend graph.",
+                "Log-normal stock price distribution, polynomial regression, along with Monte-Carlo simulation are used."
+            ],
+            "hasDetails": null,
+            "imgsrc": "../img/portfolio/tslastock2.png"
+        },
+        {
+            "companyName": "FencingProject",
+            "subtitle": "Extracurricular",
+            "title": "Fencing, U of T Varsity",
+            "desc" : 
+            [
+                "OFA (Ontario Fencing Association) registered fencer.",
+                "2017 NM Challenge, 20th place individual ranking.",
+                "2018 RMC Invitational, 1st place team ranking.",
+                "2019 OUA Men's Open, University Champion."
+            ],
+            "hasDetails": null,
+            "imgsrc": "../img/portfolio/varsity-blues.png"
+        }
+    ]
+}

@@ -1,0 +1,77 @@
+.NavbarItems {
+    height: 50px;
+    position: fixed;
+    background: black;
+    width: 100%;
+    z-index: 1;
+    color: white;
+}
+
+.nav-links {
+    color: white;
+}
+
+.nav-links:hover {
+    border-bottom: 1px solid black;
+}
+
+.nav-links .current {
+    background-color: blue;
+}
+
+.invisible {
+    opacity: 0;
+    transition: 0.3s all ease-in-out;
+}
+
+// .link-active {
+//     background-color: red;
+// }
+
+.linkClass {
+    color: rgb(50, 50, 50);;
+}
+
+.linkClass:hover {
+    color: rgb(50, 50, 50);
+    border-radius: 0px !important;
+    border-bottom: 1px black solid !important;
+    padding-bottom: -5px !important;
+    text-decoration: none;
+}
+
+// #mainNav {
+//     transition-timing-function: ease-in-out;
+//     transition-timing-function: linear;
+//     transition-delay: 1s;
+// }
+
+.dark-mode {
+  color: white;
+//   background-color: rgba(0,0,0,0.7);
+}
+
+.dark-mode:hover {
+    color: white;
+    text-decoration: none !important;
+}
+
+.dark-mode:active {
+    color: white;
+    text-decoration: none !important;
+}
+  
+.light-mode {
+  color: black;
+//   background-color: rgba(255,255,255,0.7);
+}
+
+.light-mode:hover {
+    color: black;
+    text-decoration: none;
+}
+
+.light-mode:active {
+    color: black;
+    text-decoration: none;
+}

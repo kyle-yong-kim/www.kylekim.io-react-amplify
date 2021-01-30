@@ -1,0 +1,72 @@
+.modal-wrapper-true {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    opacity: 1;
+    transition: opacity 0.4s ease-in-out;
+    z-index: 1;
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+.modal-wrapper-false {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.close-button {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: rgb(220,220,220);
+}
+
+.PodcadModal {
+    top: +45px !important;
+    right: -15px !important;
+    bottom: -15px !important;
+    left: +40% !important;
+    background: rgba(0,0,0,0) !important;
+    transform: translate(1,1);
+    transition: all 300ms;
+}
+
+.PortfolioModal {
+    top: -30px !important;
+    right: -10px !important;
+    bottom: -30px !important;
+    left: -10px !important;
+    background: rgb(200, 200, 200) !important;  
+    opacity: 0;
+    transform: translate(1,1);
+    transition: all 300ms;
+}
+
+// .ReactModal__Overlay {
+//     top: -30px !important;
+//     right: -10px !important;
+//     bottom: -30px !important;
+//     left: -10px !important;
+//     background: rgb(200, 200, 200) !important;  
+//     opacity: 0;
+//     transform: translate(1,1);
+//     transition: all 300ms;
+// }
+
+// .ReactModal__Overlay--after-open {
+//     opacity: 1;
+// }
+
+// .ReactModal__Overlay--before-close {
+//     opacity: 0;
+// }

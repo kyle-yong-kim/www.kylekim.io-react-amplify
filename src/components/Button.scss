@@ -1,0 +1,47 @@
+.button-blue {
+    text-align: center;
+    padding: 0px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #eaf1f5;
+    color: black;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 5px 5px #778c97 !important;
+    margin: 0px 5px 5px 0px;
+    border: none;
+    // box-shadow: 5px 5px rgb(80, 80, 80) !important;
+}
+
+button:focus {outline:0;}
+  
+.button-blue:hover {
+    text-align: center;
+    padding: 0px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    transition: all 0.2s ease-in-out;
+    margin: 0px 5px 5px 0px;
+    // transform: translate3d(5px, 5px, 0px);
+    box-shadow: 5px 5px rgb(100, 100, 100) !important;
+}
+
+.button-black {
+    text-align: center;
+    padding: 0px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    transition: all 0.2s ease-in-out;
+    margin: 0px 5px 5px 0px;
+    // transform: translate3d(5px, 5px, 0px);
+    box-shadow: 5px 5px rgb(100, 100, 100) !important;
+}
