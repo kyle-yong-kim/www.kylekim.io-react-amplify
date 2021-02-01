@@ -21,7 +21,10 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import Button from './components/Button';
 import * as yup from 'yup';
-// import ReactCountUp from 'react-countup-v2';
+import Amplify, { API } from 'aws-amplify';
+import config from './aws-exports';
+
+Amplify.configure(config);
 
 const podcastPerPage = 4;
 
@@ -135,13 +138,24 @@ function Podcast() {
     const [contentLength, setContentLength] = useState(0);
     const [previousContentLength, setPreviousContentLength] = useState(0);
     const [swiperIndex, setSwiperIndex] = useState(0);
+    const [successMessage, setSuccessMessage] = useState(null);
+    const [inputEnabled, setInputEnabled] = useState(true);
 
-    const { register, handleSubmit, errors } = useForm({
+    const { register, handleSubmit, errors, formState } = useForm({
         resolver: yupResolver(emailSchema),
     });
 
     const onSubmit = (data) => {
         console.log("react-hook-form test: ", data);
+
+        const payload = 
+        {
+            "body": data
+        }
+
+        const emailResponse = API.post('emailapi', '/email/add-email', payload);
+        setSuccessMessage("Email has been received. New podcast should be up soon!")
+        setInputEnabled(false);
     }
 
     const companyImgRootDirectory = "/img/companylogo/";
@@ -236,6 +250,7 @@ function Podcast() {
 
     useEffect(() => {
         updateFilterVisuals();
+        const response = API.get('analyticsapi', '/initialize');
     }, [])
 
     useEffect(() => {
@@ -264,6 +279,10 @@ function Podcast() {
             addNewPodcastModal({ "modalName": modalName, "beginTimeToClassName": getBeginTimeToClassName(modalName) });
         }
     }, [modalName]);
+
+    // useEffect(() => {
+    //     console.log(formState);
+    // }, [formState])
 
     return (
 
@@ -353,16 +372,18 @@ function Podcast() {
                         {/* <div class="swiper-container"> */}
                         <div class="podcast-card-container">
                             <div class="podcast-pagination-container">
-                                <div style={{"margin-right":"10px", "margin-top":"1px", "font-weight":"700", "font-family":"Montserrat"}}>
+                                <div style={{"margin-right":"10px", "margin-top":"1px", "font-weight":"300", "font-family":"Lato"}}>
                                     {getPodcastNumber(filteredPodcastItems)} Episodes Available
                                 </div>
                                 <div className="podcast-pagination-navigator" onClick={() => setSwiperIndex(Math.max(0, swiperIndex-1))}>
                                     <ChevronLeftIcon />
                                     {/* <ArrowLeftIcon /> */}
+                                    {/* <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M20 .755l-14.374 11.245 14.374 11.219-.619.781-15.381-12 15.391-12 .609.755z"/></svg> */}
                                 </div>
                                 <div className="podcast-pagination-navigator" onClick={() => setSwiperIndex(Math.min(filteredPodcastItems.length-1, swiperIndex+1))}>
                                     <ChevronRightIcon />
-                                    {/* <ArrowRightIcon /> */}
+                                    {/* <ArrowRightIcon />     */}
+                                    {/* <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M4 .755l14.374 11.245-14.374 11.219.619.781 15.381-12-15.391-12-.609.755z"/></svg> */}
                                 </div>
                             </div>
                             <div class="grid-container-wide">
@@ -417,14 +438,16 @@ function Podcast() {
                                     inputRef={register}
                                     name="email"
                                     type="text"
+                                    disabled={!inputEnabled}
                                 >
                                 </TextField>
                                 {/* <input name="email" type="text" ref={register} /> */}
                                 {/* <button type="submit"></button> */}
-                                <Button type="submit" theme="blue" value="Submit"/>
+                                <Button type="submit" theme="blue" value="Submit" disabled={!inputEnabled}/>
                                 {/* <GridCards theme="blue" style={{ "marginTop": "0px" }} list={["Submit"]} /> */}
                             </div>
-                            <p class="error-message">{errors["email"]?.message}</p>
+                            {errors["email"] && <p class="error-message">{errors["email"]?.message}</p>}
+                            {!errors["email"] && <p class="success-message">{successMessage}</p>}
                             </form>
 
                             {/* <h3 style={{}}> Projected industry coverage </h3>

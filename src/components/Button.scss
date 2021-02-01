@@ -45,3 +45,7 @@ button:focus {outline:0;}
     // transform: translate3d(5px, 5px, 0px);
     box-shadow: 5px 5px rgb(100, 100, 100) !important;
 }
+
+.disabled{
+    pointer-events: none;
+}

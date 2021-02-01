@@ -1,0 +1,35 @@
+{
+    "paths": [
+        {
+            "name": "/initialize",
+            "lambdaFunction": "initializeFunc",
+            "privacy": {
+                "open": true
+            },
+            "policyResourceName": "/initialize"
+        }
+    ],
+    "resourceName": "analyticsapi",
+    "apiName": "analyticsapi",
+    "functionArns": [
+        {
+            "lambdaFunction": "initializeFunc"
+        }
+    ],
+    "privacy": {
+        "auth": 0,
+        "unauth": 0,
+        "authRoleName": "amplify-wwwkylekimioreactamp-dev-212050-authRole",
+        "unAuthRoleName": "amplify-wwwkylekimioreactamp-dev-212050-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "initializeFunc",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}

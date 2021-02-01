@@ -1,0 +1,35 @@
+{
+    "paths": [
+        {
+            "name": "/email/add-email",
+            "lambdaFunction": "addEmailFunc",
+            "privacy": {
+                "open": true
+            },
+            "policyResourceName": "/email/add-email"
+        }
+    ],
+    "resourceName": "emailapi",
+    "apiName": "emailapi",
+    "functionArns": [
+        {
+            "lambdaFunction": "addEmailFunc"
+        }
+    ],
+    "privacy": {
+        "auth": 0,
+        "unauth": 0,
+        "authRoleName": "amplify-wwwkylekimioreactamp-dev-212050-authRole",
+        "unAuthRoleName": "amplify-wwwkylekimioreactamp-dev-212050-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "addEmailFunc",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}

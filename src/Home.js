@@ -23,6 +23,8 @@ import GridCards from './components/GridCards';
 // for animation, https://www.youtube.com/watch?v=9pQf5tOKtmA&t=50s
 import anime from 'animejs/lib/anime.es.js';
 import { TweenMax, TweenLite } from 'gsap/all';
+import Amplify, { API } from 'aws-amplify';
+import config from './aws-exports';
 
 import {
     BrowserView,
@@ -31,6 +33,8 @@ import {
     isMobile
 } from "react-device-detect";
 import { rgbToHex } from '@material-ui/core';
+
+Amplify.configure(config);
 
 function Home() {
 
@@ -61,6 +65,10 @@ function Home() {
             setNavbarWithColor(false);
         }
     }
+
+    useEffect(() => {
+        const response = API.get('analyticsapi', '/initialize');
+    }, [])
 
     // useEffect(() => {
     //     var textWrapper = document.querySelector('.welcome-text');

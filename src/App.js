@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
 import './App.scss';
 // import './js/dynamicActions'; // to run dynamicActions js
 // import './js/freelancer';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, withRouter } from 'react-router-dom';
 import portrait from './img/face.jpg';
 import { PortfolioModal } from './components/PortfolioModal';
 import PortfolioItem from './components/PortfolioItem';
@@ -19,6 +19,9 @@ import Podcast from './Podcast';
 import Home from './Home';
 import ErrorPage from './ErrorPage';
 import ScrollToTop from './components/ScrollToTop';
+import resumePDF from './KKim_Resume.pdf';
+import ReactGa from 'react-ga';
+import { createBrowserHistory } from 'history'
 
 import {
   BrowserView,
@@ -27,7 +30,20 @@ import {
   isMobile
 } from "react-device-detect";
 
+ReactGa.initialize('UA-188446316-1');
+
+const browserHistory = createBrowserHistory()
+browserHistory.listen((location, action) => {
+  ReactGa.pageview(location.pathname + location.search)
+  console.log("page: ", window.location.pathname + window.location.search);
+})
+
 function App() {
+
+  useEffect(() => {
+    ReactGa.pageview(window.location.pathname + window.location.search);
+    console.log("page: ", window.location.pathname + window.location.search);
+  }, [])
 
   return (
     <Router>
@@ -46,8 +62,9 @@ function App() {
 
           <Route path="/" exact component={Home} />
           <Route path="/podcast" exact component={Podcast} />
-          <Route path="*" exact component={ErrorPage} />
-
+          {/* <Route path="/KKim_Resume.pdf" exact component={resumePDF} /> */}
+          {/* <Route path="*" exact component={ErrorPage} /> */}
+          
         </Switch>
       </div>
     </Router>
