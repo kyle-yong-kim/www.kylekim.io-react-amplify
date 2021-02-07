@@ -69,7 +69,7 @@
         "Timeout": "25",
         "Code": {
           "S3Bucket": "amplify-wwwkylekimioreactamp-dev-212050-deployment",
-          "S3Key": "amplify-builds/addEmailFunc-44704f7a6a3639395949-build.zip"
+          "S3Key": "amplify-builds/addEmailFunc-676f7749615133316b7a-build.zip"
         }
       }
     },

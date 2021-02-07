@@ -241,7 +241,7 @@ line-height: 3.1rem;
 font-family: Montserrat;
 font-weight: 300;
 // color: black;
-/*color: rgb(50, 50, 50);*/
+color: rgb(50, 50, 50);
 }
 
 #mainNav .navbar-nav {
@@ -260,6 +260,11 @@ letter-spacing: 0.0625rem;
 border-bottom: 1px white solid;
 border-radius: 0px !important;
 padding-bottom: 5px !important;*/
+color: rgb(50, 50, 50);
+}
+
+#mainNav .navbar-nav li.nav-item a.nav-link {
+color: rgb(50, 50, 50);
 }
 
 #mainNav .navbar-nav li.nav-item a.nav-link:active, #mainNav .navbar-nav li.nav-item a.nav-link:focus {
@@ -1608,11 +1613,15 @@ $container-third-color: rgb(207, 213, 230);
   -webkit-transition: width 0.3s;
   transition: width 0.3s;
 }
+#mainNav .navbar-nav li.nav-item a.nav-link {
+  color: rgb(50, 50, 50);
+}
 #mainNav .navbar-nav li.nav-item a.nav-link:hover {
   font-weight: 300;
   border-bottom: 1px rgb(170, 170, 170) solid;
   border-radius: 0px !important;
   padding-bottom: 5px !important;
+  color: rgb(50, 50, 50);
 }
 header.masthead {
   /*
