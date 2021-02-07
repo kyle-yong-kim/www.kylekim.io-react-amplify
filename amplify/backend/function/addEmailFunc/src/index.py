@@ -12,14 +12,13 @@ def handler(event, context):
     # https://stackoverflow.com/questions/8107856/how-to-determine-a-users-ip-address-in-node
     dynamodb = boto3.resource("dynamodb")
     client_payload = json.loads(event.get("body"))
-    
     ip_address = event["headers"]['X-Forwarded-For'].split(', ')[0]
     location_json = getLocationFromIP(ip_address)
     location_json["latitude"] = int(location_json["latitude"])
     location_json["longitude"] = int(location_json["longitude"])
 
     print("request event: ", json.dumps(event))
-    print("location json:", json.dumps(location_json))
+    print("location json: ", json.dumps(location_json))
 
     # build payload to be inserted to DynamoDB for analytics
     insert_payload = {

@@ -48,7 +48,7 @@ function App() {
           <Route path="/" exact component={Home} />
           <Route path="/podcast" exact component={Podcast} />
           {/* <Route path="/KKim_Resume.pdf" exact component={resumePDF} /> */}
-          {/* <Route path="*" exact component={ErrorPage} /> */}
+          <Route path="*" exact component={ErrorPage} />
         </Switch>
       </div>
     </Router>

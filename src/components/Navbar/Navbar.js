@@ -82,9 +82,10 @@ export class Navbar extends Component {
             'light-mode': theme === 'light'
         })
 
-        if (from === "Home") {
-            return (
-                <nav className={navClass} style={{ "fontFamily": "Lato", "fontWeight": "300" }} id="mainNav">
+        switch (from) {
+            case "Home":
+                return (
+                    <nav className={navClass} style={{ "fontFamily": "Lato", "fontWeight": "300" }} id="mainNav">
                     <div className="container">
                         <div style={{ verticalAlign: 'middle', display: 'inline-block', margin: 0, padding: 0 }}>
                             {/* <img src="img/kk_title_logo.png" style={{"height":"25px"}}/> */}
@@ -127,47 +128,74 @@ export class Navbar extends Component {
                         </div>
                     </div>
                 </nav>
-            )
-        }
-        else {
-            return (
-                <nav className={navClass} style={{ "fontFamily": "Lato", "fontWeight": "300" }} id="mainNav">
-                    <div className="container">
-                        <div style={{ verticalAlign: 'middle', display: 'inline-block', margin: 0, padding: 0 }}>
-                            {/* <img src="img/kk_title_logo.png" style={{"height":"25px"}}/> */}
-
-                            <a style={{ verticalAlign: 'middle', paddingLeft: '6px' }} className={navbrandColorClass} href="#page-top">
-                                kylekim.io / podcast</a>
+                )
+            case "Podcast":
+                return (
+                    <nav className={navClass} style={{ "fontFamily": "Lato", "fontWeight": "300" }} id="mainNav">
+                        <div className="container">
+                            <div style={{ verticalAlign: 'middle', display: 'inline-block', margin: 0, padding: 0 }}>
+                                {/* <img src="img/kk_title_logo.png" style={{"height":"25px"}}/> */}
+    
+                                <a style={{ verticalAlign: 'middle', paddingLeft: '6px' }} className={navbrandColorClass} href="#page-top">
+                                    kylekim.io / podcast</a>
+                            </div>
+    
+                            <button className="navbar-toggler navbar-toggler-right text-uppercase text-black rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                                Menu
+                            <i className="fas fa-bars" />
+                            </button>
+    
+                            <div className="collapse navbar-collapse" id="navbarResponsive">
+    
+                                <ul className="navbar-nav ml-auto">
+    
+                                    <li className="nav-item mx-0 mx-lg-1">
+                                        <a className={navlinkColorClass} href="#help"> How Can I Help?</a>
+                                    </li>
+                                    <li className="nav-item mx-0 mx-lg-1">
+                                        <Link to="/" style={{ "margin": "0", "padding": "0" }}>
+                                            {/* <a className="nav-link smooth-scroll py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Contact</a> */}
+                                            <a className={navlinkColorClass} href="#contact">Contact</a>
+                                        </Link>
+                                    </li>
+                                    <li className="nav-item mx-0 mx-lg-1">
+                                        <Link to="/" style={{ "margin": "0", "padding": "0", "background-color": "rgba(0,0,0,0)" }}>
+                                            <a className={homeClass}> Home</a>
+                                        </Link>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-
-                        <button className="navbar-toggler navbar-toggler-right text-uppercase text-black rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                            Menu
-                        <i className="fas fa-bars" />
-                        </button>
-
-                        <div className="collapse navbar-collapse" id="navbarResponsive">
-
-                            <ul className="navbar-nav ml-auto">
-
-                                <li className="nav-item mx-0 mx-lg-1">
-                                    <a className={navlinkColorClass} href="#help"> How Can I Help?</a>
-                                </li>
-                                <li className="nav-item mx-0 mx-lg-1">
-                                    <Link to="/" style={{ "margin": "0", "padding": "0" }}>
-                                        {/* <a className="nav-link smooth-scroll py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Contact</a> */}
-                                        <a className={navlinkColorClass} href="#contact">Contact</a>
-                                    </Link>
-                                </li>
-                                <li className="nav-item mx-0 mx-lg-1">
-                                    <Link to="/" style={{ "margin": "0", "padding": "0", "background-color": "rgba(0,0,0,0)" }}>
-                                        <a className={homeClass}> Home</a>
-                                    </Link>
-                                </li>
-                            </ul>
+                    </nav>
+                )
+            default:
+                return (
+                    <nav className={navClass} style={{ "fontFamily": "Lato", "fontWeight": "300" }} id="mainNav">
+                        <div className="container">
+                            <div style={{ verticalAlign: 'middle', display: 'inline-block', margin: 0, padding: 0 }}>
+                                {/* <img src="img/kk_title_logo.png" style={{"height":"25px"}}/> */}
+    
+                                <a style={{ verticalAlign: 'middle', paddingLeft: '6px' }} className={navbrandColorClass} href="#page-top">
+                                    kylekim.io / podcast</a>
+                            </div>
+    
+                            <button className="navbar-toggler navbar-toggler-right text-uppercase text-black rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                                Menu
+                            <i className="fas fa-bars" />
+                            </button>
+    
+                            <div className="collapse navbar-collapse" id="navbarResponsive">
+                                <ul className="navbar-nav ml-auto">
+                                    <li className="nav-item mx-0 mx-lg-1">
+                                        <Link to="/" style={{ "margin": "0", "padding": "0", "background-color": "rgba(0,0,0,0)" }}>
+                                            <a className={homeClass}> Home</a>
+                                        </Link>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                </nav>
-            )
+                    </nav>
+                )
         }
     }
 }
