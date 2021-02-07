@@ -20,9 +20,7 @@ import Home from './Home';
 import ErrorPage from './ErrorPage';
 import ScrollToTop from './components/ScrollToTop';
 import resumePDF from './KKim_Resume.pdf';
-import ReactGa from 'react-ga';
 import { createBrowserHistory } from 'history'
-
 import {
   BrowserView,
   MobileView,
@@ -30,20 +28,7 @@ import {
   isMobile
 } from "react-device-detect";
 
-ReactGa.initialize('UA-188446316-1');
-
-const browserHistory = createBrowserHistory()
-browserHistory.listen((location, action) => {
-  ReactGa.pageview(location.pathname + location.search)
-  console.log("page: ", window.location.pathname + window.location.search);
-})
-
 function App() {
-
-  useEffect(() => {
-    ReactGa.pageview(window.location.pathname + window.location.search);
-    console.log("page: ", window.location.pathname + window.location.search);
-  }, [])
 
   return (
     <Router>
@@ -64,7 +49,6 @@ function App() {
           <Route path="/podcast" exact component={Podcast} />
           {/* <Route path="/KKim_Resume.pdf" exact component={resumePDF} /> */}
           {/* <Route path="*" exact component={ErrorPage} /> */}
-          
         </Switch>
       </div>
     </Router>

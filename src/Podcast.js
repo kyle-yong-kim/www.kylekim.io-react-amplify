@@ -23,6 +23,7 @@ import Button from './components/Button';
 import * as yup from 'yup';
 import Amplify, { API } from 'aws-amplify';
 import config from './aws-exports';
+import ReactGa from 'react-ga';
 
 Amplify.configure(config);
 
@@ -146,15 +147,17 @@ function Podcast() {
     });
 
     const onSubmit = (data) => {
-        console.log("react-hook-form test: ", data);
 
         const payload = 
         {
-            "body": data
+            "body": data,
+            "headers": {
+                'x-api-key': process.env.REACT_APP_API_KEY
+            }
         }
 
         const emailResponse = API.post('emailapi', '/email/add-email', payload);
-        setSuccessMessage("Email has been received. New podcast should be up soon!")
+        setSuccessMessage("Email has been received. We'll be in touch when a new episode gets released!")
         setInputEnabled(false);
     }
 
@@ -251,6 +254,8 @@ function Podcast() {
     useEffect(() => {
         updateFilterVisuals();
         const response = API.get('analyticsapi', '/initialize');
+        ReactGa.initialize(process.env.REACT_APP_GA_TRACKING_ID);
+        ReactGa.pageview(window.location.pathname + window.location.search);
     }, [])
 
     useEffect(() => {
@@ -424,7 +429,7 @@ function Podcast() {
                             <p>Absolutely, my connections have a limit in similar background, mostly of STEM fields. If you'd like to become a guest speaker for the podcast, feel free to reach out at kyle-yong-kim@outlook.com</p>
 
                             <h3>Mailing list signup</h3>
-                            <p style={{"margin":"0"}}> If you'd like to get updated with newest episodes.</p>
+                            <p style={{"margin":"0"}}> If you'd like to get updated with the newest episodes.</p>
 
                             <form onSubmit={handleSubmit(onSubmit)}>
                             <div style={{"display":"flex"}}>
