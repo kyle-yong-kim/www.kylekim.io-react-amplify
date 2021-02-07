@@ -25,6 +25,7 @@ import anime from 'animejs/lib/anime.es.js';
 import { TweenMax, TweenLite } from 'gsap/all';
 import Amplify, { API } from 'aws-amplify';
 import config from './aws-exports';
+import ReactGa from 'react-ga';
 
 import {
     BrowserView,
@@ -68,6 +69,8 @@ function Home() {
 
     useEffect(() => {
         const response = API.get('analyticsapi', '/initialize');
+        ReactGa.initialize(process.env.REACT_APP_GA_TRACKING_ID);
+        ReactGa.pageview(window.location.pathname + window.location.search);
     }, [])
 
     // useEffect(() => {

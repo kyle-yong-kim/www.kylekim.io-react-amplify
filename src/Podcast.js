@@ -23,6 +23,7 @@ import Button from './components/Button';
 import * as yup from 'yup';
 import Amplify, { API } from 'aws-amplify';
 import config from './aws-exports';
+import ReactGa from 'react-ga';
 
 Amplify.configure(config);
 
@@ -146,11 +147,13 @@ function Podcast() {
     });
 
     const onSubmit = (data) => {
-        console.log("react-hook-form test: ", data);
 
         const payload = 
         {
-            "body": data
+            "body": data,
+            "headers": {
+                'x-api-key': process.env.REACT_APP_API_KEY
+            }
         }
 
         const emailResponse = API.post('emailapi', '/email/add-email', payload);
@@ -251,6 +254,8 @@ function Podcast() {
     useEffect(() => {
         updateFilterVisuals();
         const response = API.get('analyticsapi', '/initialize');
+        ReactGa.initialize(process.env.REACT_APP_GA_TRACKING_ID);
+        ReactGa.pageview(window.location.pathname + window.location.search);
     }, [])
 
     useEffect(() => {
