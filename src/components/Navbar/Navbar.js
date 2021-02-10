@@ -176,7 +176,7 @@ export class Navbar extends Component {
                                 {/* <img src="img/kk_title_logo.png" style={{"height":"25px"}}/> */}
     
                                 <a style={{ verticalAlign: 'middle', paddingLeft: '6px' }} className={navbrandColorClass} href="#page-top">
-                                    kylekim.io / podcast</a>
+                                    kylekim.io / 404Error</a>
                             </div>
     
                             <button className="navbar-toggler navbar-toggler-right text-uppercase text-black rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">

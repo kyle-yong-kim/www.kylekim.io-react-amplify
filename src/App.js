@@ -5,7 +5,6 @@ import './App.scss';
 // import './js/dynamicActions'; // to run dynamicActions js
 // import './js/freelancer';
 import { BrowserRouter as Router, Switch, Route, withRouter } from 'react-router-dom';
-import portrait from './img/face.jpg';
 import { PortfolioModal } from './components/PortfolioModal';
 import PortfolioItem from './components/PortfolioItem';
 import workexperiences from './data/workexperiences.json';
