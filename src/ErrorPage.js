@@ -24,7 +24,7 @@ function ErrorPage() {
                     </h1>
 
                     <Link to="/" className="link">
-                        <GridCards theme="blue" list={["Redirect to home page"]} />
+                        <GridCards theme="blue" list={["Redirect back to home page"]} />
                     </Link>
                 </div>
             </section>
