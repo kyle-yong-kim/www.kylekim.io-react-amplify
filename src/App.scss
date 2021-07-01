@@ -1,9 +1,9 @@
+$landing-page-popup-container-background-color: rgb(228, 229, 238);
+$landing-page-popup-container-text-color: rgb(0, 0, 0);
+
 .App {
   text-align: left;
 }
-
-$landing-page-popup-container-background-color: rgb(227, 230, 241);
-$landing-page-popup-container-text-color: rgb(0, 0, 0);
 
 .current-status-wrapper {
   text-align: center !important;
@@ -1707,10 +1707,13 @@ background-color: aquamarine;
 .parallax-effect {
   transform-style: preserve-3d;
   height: 100%;
-}
 
-.inner-element {
-  transform: translateZ(20px);
+  a {
+    transform-style: preserve-3d;
+    .inner-element {
+      transform: translateZ(25px);
+    }
+  }
 }
 
 .ReactModalPortal {

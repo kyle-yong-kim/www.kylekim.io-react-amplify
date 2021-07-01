@@ -165,12 +165,13 @@ export const MLModal =
                     <p>
                         Below is our group's final presentation. Click <a href="https://www.youtube.com/watch?v=7oKdg4PlWIE">here</a> if the video doesn't work.
                 <br />
-                        <span style={{ backgroundColor: 'rgb(211, 247, 197)' }}>Highlighted timestamps</span> are my section within the presentation.
+                    {/* <span style={{ backgroundColor: 'rgb(211, 247, 197)' }}>Starred (*) timestamps</span> are my section within the presentation. */}
+                    Starred (*) timestamps are my section within the presentation.
                 </p>
-                    <strong>Video time stamp:</strong>
+                    <strong>Video time stamp</strong>
                     <table>
                         <tbody><tr>
-                            <th style={{ width: '320px' }}>Project Introduction</th>
+                            <th style={{ width: '350px' }}>Project Introduction</th>
                             <td>0:00 ~ 0:40</td>
                         </tr>
                             <tr>
@@ -181,42 +182,48 @@ export const MLModal =
                                 <th>Data Processing &amp; Cleaning</th>
                                 <td>1:35 ~ 3:47</td>
                             </tr>
-                            <tr style={{ backgroundColor: 'rgb(211, 247, 197)' }}>
+                            <tr>
+                            {/* <tr style={{ backgroundColor: 'rgb(211, 247, 197)' }}> */}
                                 <th>* Model Architecture</th>
                                 <td>3:47 ~ 4:39</td>
                             </tr>
-                            <tr style={{ backgroundColor: 'rgb(211, 247, 197)' }}>
+                            <tr>
+                            {/* <tr style={{ backgroundColor: 'rgb(211, 247, 197)' }}> */}
                                 <th>* Example Results</th>
                                 <td>4:39 ~ 4:53</td>
                             </tr>
                             <tr>
-                                <th>Results Discussion 1
+                                <th>Results Discussion 1: Confusion Matrix
                         <br />
-                        Confusion Matrix
                     </th>
                                 <td>4:53 ~ 6:02</td>
                             </tr>
                             <tr>
-                                <th>Results Discussion 2
+                                <th>Results Discussion 2: Baseline Accuracy
                         <br />
-                        Baseline Accuracy
                     </th>
                                 <td>6:02 ~ 6:55</td>
                             </tr>
-                            <tr style={{ backgroundColor: 'rgb(211, 247, 197)' }}>
-                                <th>* Results Discussion 3
+                            <tr>
+                            {/* <tr style={{ backgroundColor: 'rgb(211, 247, 197)' }}> */}
+                                <th>* Results Discussion 3: Prediction Confidence
                         <br />
-                        Prediction Confidence
                     </th>
                                 <td>6:55 ~ 7:14</td>
                             </tr>
-                            <tr style={{ backgroundColor: 'rgb(211, 247, 197)' }}>
+                            <tr>
+                            {/* <tr style={{ backgroundColor: 'rgb(211, 247, 197)' }}> */}
                                 <th>* Takeaway</th>
                                 <td>7:14 ~ 8:15</td>
                             </tr>
-                        </tbody></table>
-                    <div id="youtube-vid" className="iframe-container mb-3">
-                        <iframe width={560} height={315} src="https://www.youtube.com/embed/7oKdg4PlWIE?controls=1&autoplay=0&mute=0&showinfo=0&modestbranding=0&loop=1&showsearch=0" frameBorder={0} allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+                        </tbody>
+                    </table>
+
+                    <div className="mt-3">
+                        <strong>Youtube video</strong>
+                        <div id="youtube-vid" className="iframe-container mb-3">
+                            <iframe width={560} height={315} src="https://www.youtube.com/embed/7oKdg4PlWIE?controls=1&autoplay=0&mute=0&showinfo=0&modestbranding=0&loop=1&showsearch=0" frameBorder={0} allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+                        </div>
                     </div>
                     <p className="portfolio-project-click-subtitle">Project Overview</p>
                     <br />

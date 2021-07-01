@@ -139,8 +139,9 @@ export class PortfolioItem extends Component {
                                     </div>
                                     <p className="project-title">{title}</p>
                                     <p className="portfolio-date-text">{date}</p>
-                                    <img className="inner-element img-fluid mb-2 portfolio-fit-amazon"
-                                        src={imageChooser(imgsrc)} />
+
+                                    <img className="img-fluid mb-2 portfolio-fit-amazon inner-element" src={imageChooser(imgsrc)}/>
+                                    
                                     <ul>
                                         {getTeam(team)}
                                         {getMainRole(mainrole)}

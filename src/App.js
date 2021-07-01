@@ -4,7 +4,7 @@ import 'bootstrap/dist/js/bootstrap.js';
 import './App.scss';
 // import './js/dynamicActions'; // to run dynamicActions js
 // import './js/freelancer';
-import { BrowserRouter as Router, Switch, Route, withRouter } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, withRouter, useLocation } from 'react-router-dom';
 import { PortfolioModal } from './components/PortfolioModal';
 import PortfolioItem from './components/PortfolioItem';
 import workexperiences from './data/workexperiences.json';
@@ -44,8 +44,8 @@ function App() {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/podcast" exact component={Podcast} />
-          <Route path="/podcast/" exact component={Podcast} />
           <Route path="*" exact component={ErrorPage} />
+          <Redirect from="/podcast/" to="/podcast"/>
         </Switch>
       </div>
     </Router>
