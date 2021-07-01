@@ -41,12 +41,10 @@ function App() {
       <link href="https://fonts.googleapis.com/earlyaccess/jejumyeongjo.css" rel="stylesheet" />
       <link href="https://fonts.googleapis.com/css?family=Song%20Myung" rel="stylesheet" />
       <div className="App">
-        {/* <Navbar id="start" visible={true} /> */}
         <Switch>
-
           <Route path="/" exact component={Home} />
           <Route path="/podcast" exact component={Podcast} />
-          {/* <Route path="/KKim_Resume.pdf" exact component={resumePDF} /> */}
+          <Route path="/podcast/" exact component={Podcast} />
           <Route path="*" exact component={ErrorPage} />
         </Switch>
       </div>
