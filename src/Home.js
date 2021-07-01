@@ -73,28 +73,6 @@ function Home() {
         ReactGa.pageview(window.location.pathname + window.location.search);
     }, [])
 
-    // useEffect(() => {
-    //     var textWrapper = document.querySelector('.welcome-text');
-    //     textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
-    //     // anime.timeline().add(
-    //     //     {
-    //     //         targets: '.welcome-text .letter',
-    //     //         traslateY: [200, 0],
-    //     //         translateZ: 0,
-    //     //         opacity: [0, 1],
-    //     //         easing: "easeOutExpo",
-    //     //         duration: 2000,
-    //     //         delay: (el, i) => 4800 + 50 * i
-    //     //     }
-    //     // );
-
-    //     TweenLite.to(".welcome-text", 1, {
-    //         background: 'grey',
-    //         y: 200,
-    //         ease: 'easeOutExpo'
-    //     })
-    // }, []);
-
     window.addEventListener('scroll', changeNavbarColor);
 
     const educationAndTech = <><div className="overview-item">
@@ -164,20 +142,6 @@ function Home() {
             </div>
         </div></>
 
-    const banner =
-        <div className="container">
-            <div className="flex-row-container">
-                <div className="landing-page-img-container">
-                </div>
-                <div className="landing-page-popup-container">
-                    <h3>Lest we forget</h3>
-                    <p>Remembrance Day</p>
-                    <p>November 11th, 2020</p>
-                    <p> We thank you for your service.</p>
-                </div>
-            </div>
-        </div>
-
     const briefOverviewContent = (isMobile) ? null : educationAndTech;
 
     return (
@@ -191,13 +155,6 @@ function Home() {
                 isPodcast={false}
                 theme={"PortfolioModal"} />
             <div>
-
-                {/* <Globe
-      // globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
-      globaImageUrl="https://raw.githubusercontent.com/dataarts/webgl-globe/2d24ba30/globe/world.jpg"
-      pointAltitude="size"
-      pointColor="color"
-    />, */}
 
                 <link rel="icon" href="img/kk_title_logo.png" />
                 <meta charSet="utf-8" />
@@ -217,51 +174,26 @@ function Home() {
 
                                 <div class="video-wrap">
                                     <video autoPlay muted loop id="myVideo" className="video-wrap">
-                                        {/* <source src="/img/bg.mp4" type="video/mp4" /> */}
                                         <source src="https://s3.us-east-2.amazonaws.com/kylekim.io.podcast/bg.mp4" type="video/mp4" />
                                     </video>
                                 </div>
                                 <div class="landing-text">
-                                    {/* <h1 className="passion-text" style={{margin: 0, padding: 0}}>Passion. In. Programming.</h1> */}
                                     <h1 id="welcome-text" className="welcome-text">Welcome.
-                                        
                                         <span id="welcome-text-korean">환영합니다.</span>
-                                    
                                     </h1>
-
-                                    {/* <h1 className="passion-text notification-text" style={{ "color": "black" }}>
-                                        <Link to="/podcast" style={{ "color": "black" }}>
-                                            <span className="update">Update</span> Podcast is now available!</Link>
-                                    </h1> */}
-
-                                    {/* <div id="podcast" className="container"> */}
-                                    {/* {bannerJSX} */}
 
                                     <div className="container">
                                         <div className="flex-row-container">
                                             <div className="landing-page-img-container">
                                             </div>
                                             <div className="landing-page-popup-container">
-                                                <h3>Lest we forget</h3>
-                                                <p>Remembrance Day</p>
-                                                <p>November 11th, 2020</p>
-                                                <p>We thank you for your service.</p>
+                                                <h3>July 1st, 2021</h3>
+                                                <p>Celebrating Canada Day.</p>
+                                                <p>Happy Independence Day for</p> 
+                                                <p>American visitors!</p>
                                             </div>
                                         </div>
                                     </div>
-
-                                    {/* <div id="landing-page-subtext-wrapper" className="landing-page-subtext-wrapper">
-
-                    <h1 className="passion-text">Name is Kyle, currently working as SDE at Amazon.</h1>
-
-                    <h1 className="passion-text">I usually put my side-projects on this website.</h1>
-
-                    <h1 className="passion-text notification-text" style={{ "marginBottom": "20px" }}>
-                      <span className="update">Update</span> Career podcast coming shortly.
-                    </h1>
-                    <a className="landing-page-button" href="#about">View More</a>
-
-                  </div> */}
                                 </div>
                             </div>
                         </Fade>
@@ -388,10 +320,10 @@ function Home() {
 
                                         <h3>Email</h3>
                                         {/* <p>kyle-yong-kim [at] outlook.com</p> */}
-                                        <GridCards theme="white" style={{marginBottom:"20px"}} list={["kyle-yong-kim [at] outlook.com"]} />
+                                        <GridCards theme="white" style={{marginBottom:"20px"}} list={["kyle-yong-kim@outlook.com"]} />
 
                                         <h3>Linkedin</h3>
-                                        <GridCards theme="white" list={["Kyle Kim @ linkedIn"]} />
+                                        <GridCards theme="white" list={["Kyle Kim@linkedIn"]} />
                             </div>
                             </div>
                         </section>

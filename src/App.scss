@@ -2,7 +2,8 @@
   text-align: left;
 }
 
-$landing-page-popup-container-background-color: rgb(50, 53, 58);
+$landing-page-popup-container-background-color: rgb(227, 230, 241);
+$landing-page-popup-container-text-color: rgb(0, 0, 0);
 
 .current-status-wrapper {
   text-align: center !important;
@@ -158,7 +159,7 @@ h2{
   // background: linear-gradient(90deg, rgba(234,241,245,1) 50%, rgba(255,255,255,0) 100%);
   background-color: $landing-page-popup-container-background-color;
   padding: 30px;
-  color: white;
+  color: $landing-page-popup-container-text-color;
 }  
 
 .landing-page-popup-container > p {
@@ -371,7 +372,7 @@ font-size: 1.5rem;
 }
 .landing-page-img-container {
   width: 420px;
-  background-image: url('./img/poppy.png');
+  background-image: url('./img/flag.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -1346,7 +1347,7 @@ $container-third-color: rgb(207, 213, 230);
 
   .landing-page-img-container {
     width: 420px;
-    background-image: url('./img/poppy.png');
+    background-image: url('./img/flag.jpg');
     background-repeat: no-repeat;
     background-position: right;
     background-size: cover;
@@ -1531,7 +1532,7 @@ $container-third-color: rgb(207, 213, 230);
     // background: linear-gradient(90deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.836), rgba(177, 177, 177, 0));
     background-color: $landing-page-popup-container-background-color;
     padding: 30px;
-    color: white;
+    color: $landing-page-popup-container-text-color;
   }  
 
   .landing-page-popup-container > p {
@@ -1949,7 +1950,7 @@ table {
 
   .landing-page-img-container {
     height: 200px;
-    background-image: url('./img/poppy.png');
+    background-image: url('./img/flag.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -2059,7 +2060,7 @@ table {
     // background: linear-gradient(90deg, rgba(234,241,245,1) 50%, rgba(255,255,255,0) 100%);
     background-color: $landing-page-popup-container-background-color;
     padding: 15px;
-    color: white;
+    color: $landing-page-popup-container-text-color;
   }  
   
   .landing-page-popup-container > p {
